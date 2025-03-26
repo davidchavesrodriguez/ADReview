@@ -1,9 +1,13 @@
 package gal.david.review.singleton.singletonproperties;
 
-public class PropertiesMain {
-    public static void main(String[] args) {
-        Properties properties= Properties.getInstance();
+import java.io.IOException;
 
-        System.out.println(properties.getProperty("url"));
-    }
+public class PropertiesMain {
+    public static void main(String[] args) throws IOException {
+        LoadProperties loadProperties = LoadProperties.getInstance();
+
+        System.out.println(loadProperties.getProperty("url"));
+        System.out.println(loadProperties.getProperty("driver"));
+        System.out.println(loadProperties.getProperty("usuario"));
+        System.out.println(loadProperties.getProperty("password"));    }
 }

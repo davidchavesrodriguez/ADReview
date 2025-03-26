@@ -7,7 +7,7 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <!--        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>-->
         <exclude-unlisted-classes>false</exclude-unlisted-classes>
-        <properties>
+        <loadProperties>
             <property name="jakarta.persistence.jdbc.url"
                       value="jdbc:postgresql:// dbalumnos.sanclemente.local:5438/SuzukiViolin"/>
             <property name="jakarta.persistence.jdbc.user" value="aduser"/>
@@ -21,13 +21,13 @@
             <property name="hibernate.highlight_sql" value="true"/>
             <property name="hibernate.globally_quoted_identifiers" value="true"/>
             <!--      <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect" />-->
-        </properties>
+        </loadProperties>
     </persistence-unit>
     <persistence-unit name="suzukilocal" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <!--        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>-->
         <exclude-unlisted-classes>false</exclude-unlisted-classes>
-        <properties>
+        <loadProperties>
 
             <!-- PostgreSQL -->
             <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/SuzukiViolin"/>
@@ -46,6 +46,6 @@
             <property name="hibernate.highlight_sql" value="true"/>
             <property name="hibernate.globally_quoted_identifiers" value="true"/>
             <!--            &lt;!&ndash;      <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect" />&ndash;&gt;-->
-        </properties>
+        </loadProperties>
     </persistence-unit>
 </persistence>

@@ -7,9 +7,9 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <!--        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>-->
         <exclude-unlisted-classes>false</exclude-unlisted-classes>
-        <loadProperties>
+        <properties>
             <property name="jakarta.persistence.jdbc.url"
-                      value="jdbc:postgresql:// dbalumnos.sanclemente.local:5438/SuzukiViolin"/>
+                      value="jdbc:postgresql://dbalumnos.sanclemente.local:5438/SuzukiViolin"/>
             <property name="jakarta.persistence.jdbc.user" value="aduser"/>
             <property name="jakarta.persistence.jdbc.password" value="exame123."/>
             <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver"/>
@@ -21,20 +21,20 @@
             <property name="hibernate.highlight_sql" value="true"/>
             <property name="hibernate.globally_quoted_identifiers" value="true"/>
             <!--      <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect" />-->
-        </loadProperties>
+        </properties>
     </persistence-unit>
     <persistence-unit name="suzukilocal" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <!--        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>-->
         <exclude-unlisted-classes>false</exclude-unlisted-classes>
-        <loadProperties>
+        <properties>
 
             <!-- PostgreSQL -->
             <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/SuzukiViolin"/>
             <property name="jakarta.persistence.jdbc.user" value="postgres"/>
             <property name="jakarta.persistence.jdbc.password" value=""/>
             <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver"/>
-            <property name="jakarta.persistence.schema-generation.database.action" value="none"/>
+            <property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create"/>
 
             <!--            <property name="eclipselink.logging.level" value="INFO"/>-->
             <!--            <property name="eclipselink.logging.level.sql" value="FINE"/>-->
@@ -46,6 +46,6 @@
             <property name="hibernate.highlight_sql" value="true"/>
             <property name="hibernate.globally_quoted_identifiers" value="true"/>
             <!--            &lt;!&ndash;      <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect" />&ndash;&gt;-->
-        </loadProperties>
+        </properties>
     </persistence-unit>
 </persistence>

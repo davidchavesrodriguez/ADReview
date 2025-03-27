@@ -4,9 +4,12 @@ import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
+@Entity
 public class Autor {
 
+    @Id
     private Long idAutor;
+
     private String nombre;
     private String apellidos;
     private String codigoNacionalidad;

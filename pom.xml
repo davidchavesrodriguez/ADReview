@@ -8,11 +8,12 @@
     <artifactId>AD2023-24-finalSuzukiViolin</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <loadProperties>
+    <properties>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </loadProperties>
+    </properties>
+
     <dependencies>
         <!-- https://mvnrepository.com/artifact/jakarta.persistence/jakarta.persistence-api -->
         <dependency>
@@ -93,5 +94,17 @@
             <version>2.23.1</version>
         </dependency>
     </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>10</source>
+                    <target>10</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

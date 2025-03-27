@@ -88,7 +88,7 @@ public class Partitura {
 
     private void setAudio(String ruta) {
         if(ruta != null && !ruta.isEmpty() && Files.exists(Paths.get(ruta))) {
-            try (var is = new BufferedInputStream(Files.newInputStream(Paths.get(ruta)))){
+            try (BufferedInputStream is = new BufferedInputStream(Files.newInputStream(Paths.get(ruta)))){
                 this.audio = is.readAllBytes();
             } catch (Exception e) {
                 System.out.println("Error al cargar el audio");

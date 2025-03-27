@@ -40,21 +40,21 @@ public class Foto {
         this.picture = picture;
     }
 
-    private void setPicture(String foto) {
-        if(foto != null && !foto.isEmpty()  && foto.startsWith("data:image")) {
-            String[] partes = foto.split(",");
-            String base64 = partes[1];
-            this.picture = Base64.getDecoder().decode(base64);
-            this.path = foto;
-        } else if (foto != null && !foto.isEmpty() && Files.exists(Paths.get(foto))) {
-            try (var is = Files.newInputStream(Paths.get(foto))) {
-                this.picture =is.readAllBytes();
-                this.path = foto;
-            } catch (IOException e) {
-                System.out.println("Error al cargar la imagen");
-            }
-        }
-    }
+//    private void setPicture(String foto) {
+//        if(foto != null && !foto.isEmpty()  && foto.startsWith("data:image")) {
+//            String[] partes = foto.split(",");
+//            String base64 = partes[1];
+//            this.picture = Base64.getDecoder().decode(base64);
+//            this.path = foto;
+//        } else if (foto != null && !foto.isEmpty() && Files.exists(Paths.get(foto))) {
+//            try (var is = Files.newInputStream(Paths.get(foto))) {
+//                this.picture =is.readAllBytes();
+//                this.path = foto;
+//            } catch (IOException e) {
+//                System.out.println("Error al cargar la imagen");
+//            }
+//        }
+//    }
 
     public byte[] getPicture() {
         return picture;
@@ -70,9 +70,9 @@ public class Foto {
         }
     }
 
-    public void setFoto(String foto) {
-        setPicture(foto);
-    }
+//    public void setFoto(String foto) {
+//        setPicture(foto);
+//    }
 
     public String getFoto() {
         return path;

@@ -7,8 +7,9 @@ import java.time.LocalDate;
 
 public class AppSuzuki {
     public static void main(String[] args) {
-        EMFManager emfManager = EMFManager.getInstance("suzukilocal");
-        EntityManager entityManager = emfManager.getEntityManagerFactory().createEntityManager();
+        EMFManager emfManager = EMFManager.getInstance();
+
+        EntityManager entityManager = emfManager.createEntityManager("suzukilocal");
 
         try {
             Autor author = new Autor("Shinichi", "Suzuki", "JPN", null, LocalDate.now());
@@ -25,7 +26,10 @@ public class AppSuzuki {
             }
             e.printStackTrace();
         } finally {
-            entityManager.close();
+            if (entityManager != null && entityManager.isOpen()) {
+                entityManager.close();
+            }
+
         }
     }
 }

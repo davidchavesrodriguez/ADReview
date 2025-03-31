@@ -10,6 +10,7 @@ public class Autor {
     @Id
     private Long idAutor;
 
+
     private String nombre;
     private String apellidos;
     private String codigoNacionalidad;

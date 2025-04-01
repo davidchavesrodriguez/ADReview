@@ -1,21 +1,18 @@
 package com.pepinho.ad.suzukiviolin.entities;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.Base64;
 
-public class Foto {
+public class Picture {
 
     private String nombre;
     private String path;
 
     private byte[] picture;
 
-    public Foto() {
+    public Picture() {
     }
 
-    public Foto(String name, String path) {
+    public Picture(String name, String path) {
         this.nombre = name;
         this.path = path;
     }

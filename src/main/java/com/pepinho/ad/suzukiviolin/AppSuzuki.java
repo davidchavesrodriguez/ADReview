@@ -13,7 +13,6 @@ public class AppSuzuki {
 
         try {
             Autor author = new Autor("Shinichi", "Suzuki", "JPN", null, LocalDate.now());
-            author.setIdAutor(42L);
 
             entityManager.getTransaction().begin();
             entityManager.persist(author);

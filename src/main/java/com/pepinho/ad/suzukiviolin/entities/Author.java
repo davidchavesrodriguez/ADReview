@@ -5,11 +5,11 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "UUIDAutor")
-public class Autor {
+// @Table(name = "Autor")
+public class Author {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE)
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long idAutor;
 
     @Column(nullable = false, length = 125)
@@ -31,10 +31,10 @@ public class Autor {
 
     private MusicGenre generoMusical;
 
-    public Autor() {
+    public Author() {
     }
 
-    public Autor(String nombre, String apellido, String codigoNacionalidad, LocalDate fechaNacimiento, LocalDate fechaDefuncion) {
+    public Author(String nombre, String apellido, String codigoNacionalidad, LocalDate fechaNacimiento, LocalDate fechaDefuncion) {
         this.nombre = nombre;
         this.apellidos = apellido;
         this.codigoNacionalidad = codigoNacionalidad;
@@ -42,8 +42,8 @@ public class Autor {
         this.fechaDefuncion = fechaDefuncion;
     }
 
-    public Autor(String nombre, String apellido, String codigoNacionalidad, LocalDate fechaNacimiento,
-                 LocalDate fechaDefuncion, String biografia) {
+    public Author(String nombre, String apellido, String codigoNacionalidad, LocalDate fechaNacimiento,
+                  LocalDate fechaDefuncion, String biografia) {
         this.nombre = nombre;
         this.apellidos = apellido;
         this.codigoNacionalidad = codigoNacionalidad;

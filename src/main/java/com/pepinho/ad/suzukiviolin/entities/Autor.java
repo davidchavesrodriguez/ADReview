@@ -3,6 +3,9 @@ package com.pepinho.ad.suzukiviolin.entities;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "UUIDAutor")
@@ -31,7 +34,12 @@ public class Autor {
 
     private MusicGenre generoMusical;
 
+    @OneToMany(mappedBy = "autor")
+    @Basic(fetch = FetchType.LAZY)
+    private Set<PiezaMusical> piezas;
+
     public Autor() {
+        piezas= new HashSet<>();
     }
 
     public Autor(String nombre, String apellido, String codigoNacionalidad, LocalDate fechaNacimiento, LocalDate fechaDefuncion) {
@@ -40,6 +48,7 @@ public class Autor {
         this.codigoNacionalidad = codigoNacionalidad;
         this.fechaNacimiento = fechaNacimiento;
         this.fechaDefuncion = fechaDefuncion;
+        piezas= new HashSet<>();
     }
 
     public Autor(String nombre, String apellido, String codigoNacionalidad, LocalDate fechaNacimiento,
@@ -50,6 +59,12 @@ public class Autor {
         this.fechaNacimiento = fechaNacimiento;
         this.fechaDefuncion = fechaDefuncion;
         this.biografia = biografia;
+        piezas= new HashSet<>();
+    }
+
+    public void addPiezaMusical(PiezaMusical pieza){
+        piezas.add(pieza);
+        pieza.setAutor(this);
     }
 
     public Long getIdAutor() {

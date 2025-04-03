@@ -7,9 +7,11 @@ import java.io.BufferedInputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-
+@Entity
 public class Partitura {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idPartitura;
 
     private String nombre;
@@ -21,6 +23,10 @@ public class Partitura {
      * Audio de la partitura en formato MP3
      */
     private byte[] audio;
+
+    @ManyToOne
+    @JoinColumn(name = "idPieza")
+    private PiezaMusical piezaMusical;
 
     public Partitura() {
     }
@@ -87,8 +93,8 @@ public class Partitura {
     }
 
     private void setAudio(String ruta) {
-        if(ruta != null && !ruta.isEmpty() && Files.exists(Paths.get(ruta))) {
-            try (BufferedInputStream is = new BufferedInputStream(Files.newInputStream(Paths.get(ruta)))){
+        if (ruta != null && !ruta.isEmpty() && Files.exists(Paths.get(ruta))) {
+            try (BufferedInputStream is = new BufferedInputStream(Files.newInputStream(Paths.get(ruta)))) {
                 this.audio = is.readAllBytes();
             } catch (Exception e) {
                 System.out.println("Error al cargar el audio");
